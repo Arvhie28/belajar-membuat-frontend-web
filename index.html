@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf Apps</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h2 class="title">Selamat Datang di Bookshelf Apps</h2>
+      <img src="assets/img/banner.svg" class="img-banner" alt="Banner" />
+    </header>
+
+    <main>
+      <div class="content">
+        <div class="col-1">
+          <div class="user-information card">
+            <img src="assets/img/avatar.jpg" alt="Avatar" />
+            <h2 class="user-title">Aranda Rafiantoro</h2>
+            <p class="user-bio">Dicoding Academy</p>
+            <div class="information">
+              <h2>Jumlah Buku</h2>
+              <span id="totalBook">0</span>
+            </div>
+            <button data-modal-target="#modal" id="#addBook">Tambah Buku</button>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="search card">
+            <form id="searchBook">
+              <label for="searchBookTitle">Judul</label>
+              <input id="searchBookTitle" type="text" />
+              <button
+                id="searchButton"
+                class="btn-primary text-white"
+                type="button"
+              >
+                Search
+              </button>
+              <button
+                id="resetButton"
+                class="btn-danger text-white"
+                type="button"
+              >
+                Reset
+              </button>
+            </form>
+          </div>
+
+          <div class="bookshelf-item">
+            <div class="bookshelf-section">
+              <!-- Belum Selesai Baca -->
+              <section class="book-shelf">
+                <h2>Belum Selesai Dibaca</h2>
+
+                <div id="inCompleteBookshelfList" class="book-list"></div>
+              </section>
+              <!-- Selesai Baca -->
+              <section class="book-shelf">
+                <h2>Selesai Dibaca</h2>
+
+                <div id="completeBookshelfList" class="book-list"></div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <div id="modal" class="modal">
+          <div class="modal-header">
+            <h2 class="modal-title">Masukkan Buku Baru</h2>
+            <button data-close-button class="close-btn">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form id="inputBook">
+              <div class="input">
+                <label for="inputBookTitle">Judul</label>
+                <input id="inputBookTitle" type="text" />
+              </div>
+              <div class="input">
+                <label for="inputBookAuthor">Penulis</label>
+                <input id="inputBookAuthor" type="text" />
+              </div>
+              <div class="input">
+                <label for="inputBookYear">Tahun</label>
+                <input id="inputBookYear" type="date" />
+              </div>
+              <div class="input-inline">
+                <label for="inputBookIsComplete">Selesai Dibaca</label>
+                <input id="inputBookIsComplete" type="checkbox" />
+              </div>
+              <button id="buttonSubmit" type="submit">
+                Masukkan Buku ke rak
+                <span class="isNotCompleted" style="display: inline-block"
+                  >Belum Selesai Dibaca</span
+                >
+                <span class="isCompleted" style="display: none"
+                  >Selesai Dibaca</span
+                >
+              </button>
+            </form>
+          </div>
+        </div>
+        <div id="overlay"></div>
+      </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/storage.js"></script>
+  </body>
+</html>
